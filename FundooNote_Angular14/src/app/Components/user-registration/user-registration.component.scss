@@ -1,0 +1,108 @@
+
+.Main-body{
+    display: flex;
+    flex-direction: row;
+    position: fixed;
+    top: 20%;
+    left: 30%;
+    transform: translate(-17%,-17%);
+    width: 1000px;
+    padding: 17px;
+    height: 90%;
+}
+
+.MainContainer{
+    display: flex;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border: 1px solid #9c9c9c;
+    border-radius: 10px;
+    width: 700px;
+    padding: 25px;
+    height: 60%;
+    background: #fff;
+}
+
+.head{
+    display: flex;
+    flex-direction: column;
+    line-height: 60px;
+}
+
+.form-logo{
+    font-size: 35px;
+    font-family: "Georgia", "Courier New", monospace;}
+
+.LeftContainer{
+    font-size: 10px;
+ }
+
+.RightContainer{
+    margin: auto;
+}
+
+.form-label{
+    font-size: 15px; // example
+}
+
+.form-input{
+    font-size: 15px;
+}
+
+.username-field{
+    width: 100%;
+}
+
+.Email{
+    padding-bottom: 12px;
+}
+
+.form-checkbox{
+    padding: 17px 0px 0px 4px;
+    margin-top: auto;
+    font-size: 13px;
+}
+
+.form-btn{
+    display: flex;
+    column-gap: 42.5%;
+    padding-top: 13%;
+}
+
+::ng-deep {
+    .mat-form-field-appearance-outline .mat-form-field-outline {
+       color: darkgray;
+       font-size: 25px;
+    }
+ }
+
+ mat-error{
+    font-size: 10px;
+ }
+
+ mat-hint{
+    font-size: 12px;
+ }
+
+ .footer{
+    display: flex;
+    flex-direction: row;
+    position: fixed;
+    top: 89%;
+    left: 64.5%;
+    transform: translate(-50%,-50%);
+    width: 100%;
+    column-gap: 35%;
+    color: gray;
+}
+
+.footer-dropdown{
+    font-size: 12px;
+    
+}
+
+.footer-link{
+    font-size: 13px;
+}

@@ -1,0 +1,92 @@
+<div class="Main-body">
+    <div class="MainContainer">
+      <div class="LeftContainer">
+        <div class="head"> 
+          <div class="form-logo">
+            <span  style="color: #4169e1;">F</span>
+            <span  style="color: #d52b2b;">u</span>
+            <span  style="color: #ff8c00;">n</span>
+            <span  style="color: #4169e1;">d</span>
+            <span  style="color: #008000;">o</span>
+            <span  style="color: #d52b2b;">N</span>
+            <span  style="color: #ff8c00;">o</span>
+            <span  style="color: #4169e1;">t</span>
+            <span  style="color: #008000;">e</span>
+          </div>
+          <h2>Create your FundoNote Account here</h2>
+        </div>
+        <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+          <table class="name"><tr>
+            <td><mat-form-field class="form-field" appearance="outline">
+              <mat-label class="form-label">Firstname</mat-label>
+              <input type="text" class="form-input" matInput placeholder="" formControlName="FirstName" />
+              <mat-error>Enter first Name</mat-error>
+            </mat-form-field>
+            </td>
+            <td><mat-form-field class="form-field" appearance="outline">
+              <mat-label class="form-label">Lastname</mat-label>
+              <input type="text" class="form-input" matInput placeholder="" formControlName="LastName" />
+              <mat-error>Enter Last Name</mat-error>
+            </mat-form-field>
+            </td>
+          </tr></table>
+          <div class="Email">
+            <mat-form-field class="form-field username-field" appearance="outline">
+              <mat-label class="form-label">Username</mat-label>
+              <input type="email" class="form-input" matInput placeholder="abc123@gmail.com" formControlName="Email" />
+              <mat-hint>You can use letters,Numbers & periods</mat-hint>
+              <mat-error>Choose a Mail Address</mat-error>
+            </mat-form-field><br>
+          </div>
+          <table class="Password">
+            <tr>
+              <td><mat-form-field class="form-field" appearance="outline">
+                <mat-label class="form-label">Password</mat-label>
+                <input [type]="hide ? 'password' : 'text'" class="form-input" id="pass1" matInput placeholder="" formControlName="Password"> 
+                <mat-hint>Use 8 or more characters with mix of letters,numbers&symbols</mat-hint>
+                <mat-error>Please create Password</mat-error>
+              </mat-form-field>
+              </td>
+              <td><mat-form-field class="form-field" appearance="outline">
+                <mat-label class="form-label">Confirm Password</mat-label>
+                <input [type]="hide ? 'password' : 'text'" class="form-input" id="pass2" class="form-input" matInput placeholder="" formControlName="ConfirmPassword" >
+                <mat-error>Please confirm your Password</mat-error>
+              </mat-form-field>
+              </td>
+            </tr>
+          </table>
+          <mat-checkbox class="form-checkbox" color="primary" (click)=" ShowPassword()">Show Password</mat-checkbox>
+          <section class="form-btn">  
+            <div>
+              <button mat-stroked-button color="primary" routerLink="/login">Sign In Instead</button>
+            </div>
+            <div >
+              <button mat-raised-button color="primary" style="width: 100px;" (click)="onSubmit()">Create</button>
+            </div>
+          </section>
+        </form>
+      </div>
+    
+        <div class="RightContainer">
+          <img  src="assets/Registration/SideImage0.jpg" alt="something Went Wrong" width="100%" height="70%">
+        </div>
+    </div>
+      <div class="footer">
+              <div class="footer-dropdown">
+                <mat-form-field appearance="legacy">
+                  <mat-label></mat-label>
+                  <mat-select [(value)]="selectedLang">
+                    <mat-option></mat-option>
+                    <mat-option [value]="option.value" *ngFor="let option of Language">{{ option.viewValue }}</mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+              <div >
+                  <a class="footer-link" mat-button href="https://support.google.com/accounts?hl=en#topic=3382296" >Help</a>
+                  <a class="footer-link"  mat-button href="https://policies.google.com/privacy?gl=IN&hl=en" >Privacy</a>
+                  <a class="footer-link" mat-button href="https://policies.google.com/terms?gl=IN&hl=en">Terms</a>
+              </div>
+      </div>
+  </div>
+  
+  
