@@ -9,47 +9,43 @@ interface Language{
 }
 
 @Component({
-  selector: 'app-user-login',
-  templateUrl: './user-login.component.html',
-  styleUrls: ['./user-login.component.scss']
+  selector: 'app-forgot-password',
+  templateUrl: './forgot-password.component.html',
+  styleUrls: ['./forgot-password.component.scss']
 })
-export class UserLoginComponent implements OnInit {
-  LoginForm!: FormGroup;
+export class ForgotPasswordComponent implements OnInit {
+
+  ForgotPassForm!: FormGroup;
   submitted = false;
-  hide: boolean = true;
   durationInSeconds = 5;
 
   constructor(private formBuilder: FormBuilder , private user: UserService,private _snackbar:MatSnackBar) { }
 
   ngOnInit() {
-      this.LoginForm = this.formBuilder.group({
-          Email: ['', [Validators.required, Validators.email]],
-          Password: ['', [Validators.required, Validators.minLength(8)]],
+      this.ForgotPassForm = this.formBuilder.group({
+        Email: ['', [Validators.required, Validators.email]]
       });
   }
   // convenience getter for easy access to form fields
-  get f() { return this.LoginForm.controls; }
+  get f() { return this.ForgotPassForm.controls; }
 
   onSubmit() {
       this.submitted = true;
 
       // stop here if form is invalid
-      if (this.LoginForm.invalid) {
+      if (this.ForgotPassForm.invalid) {
           return;
       }
-      console.log(this.LoginForm.value);
+      console.log(this.ForgotPassForm.value);
 
-      console.log(this.LoginForm.value);
+      console.log(this.ForgotPassForm.value);
         let reqdata={
-          Email: this.LoginForm.value.Email,
-          Password: this.LoginForm.value.Password,
+          Email: this.ForgotPassForm.value.Email
         }
 
-        this.user.login(reqdata).subscribe((response:any)=>{
+        this.user.ForgotPassword(reqdata).subscribe((response:any)=>{
           console.log(response);
-          localStorage.setItem("token",response.data);
-
-          this._snackbar.open('Login Sucessfull...','',{
+          this._snackbar.open('Reset Password Link Sent Sucessfully...','',{
             duration: this.durationInSeconds * 400
           });
         }, (error: any) => {
@@ -59,11 +55,7 @@ export class UserLoginComponent implements OnInit {
 
   onReset() {
       this.submitted = false;
-      this.LoginForm.reset();
-  }
-
-  ShowPassword() {
-    this.hide = !this.hide;
+      this.ForgotPassForm.reset();
   }
 
   selectedValue!: string;
@@ -74,5 +66,4 @@ export class UserLoginComponent implements OnInit {
     {value: 'Hindi-2', viewValue: 'Hindi'},
   ];
   selectedLang = this.Language[0].value;
-
 }

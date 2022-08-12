@@ -19,12 +19,14 @@ import { AppComponent } from './app.component';
 import { UserRegistrationComponent } from './Components/user-registration/user-registration.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { UserLoginComponent } from './Components/user-login/user-login.component';
+import { ForgotPasswordComponent } from './Components/forgot-password/forgot-password.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     UserRegistrationComponent,
-    UserLoginComponent
+    UserLoginComponent,
+    ForgotPasswordComponent
   ],
   imports: [
     BrowserModule,
