@@ -22,4 +22,19 @@ export class UserService {
 
     return this.httpService.postservice('/User/AddUser',reqdata,false,header)
   }
+
+  
+  login(reqdata: any)
+  {
+    console.log(reqdata);
+
+    let header = {
+      headers:new HttpHeaders({
+        'Content-type':'application/json'
+      })
+    }
+
+    return this.httpService.postservice('/User/LoginUser',reqdata,false,header)
+  }
+
 }
